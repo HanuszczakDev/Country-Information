@@ -25,7 +25,11 @@ class MainFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         viewModel.countryDto.observe(viewLifecycleOwner) {
-            binding.textView.text = it?.cca2
+            var result = ""
+            it.currencies?.forEach { item ->
+                result = "name: ${item.value.name} symbol: ${item.value.symbol}"
+            }
+            binding.textView.text = result
         }
 
         return binding.root

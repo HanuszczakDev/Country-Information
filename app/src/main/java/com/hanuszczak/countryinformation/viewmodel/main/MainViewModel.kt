@@ -10,8 +10,8 @@ import com.hanuszczak.countryinformation.model.repository.CountryApi
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
-    private val _countryDto = MutableLiveData<CountryDto?>()
-    val countryDto: LiveData<CountryDto?>
+    private val _countryDto = MutableLiveData<CountryDto>()
+    val countryDto: LiveData<CountryDto>
         get() = _countryDto
 
     init {
@@ -20,7 +20,7 @@ class MainViewModel : ViewModel() {
             try {
                 val countryDtoList = CountryApi.retrofitService.getAll()
                 _countryDto.value = countryDtoList[0]
-                Log.d("MainViewModel", "response: ${countryDtoList[0].cca2}")
+                Log.d("MainViewModel", "response: ${countryDtoList[0]}")
             } catch (e: java.lang.Exception) {
                 Log.e("MainViewModel", "exception in init block: ${e.localizedMessage}")
             }
