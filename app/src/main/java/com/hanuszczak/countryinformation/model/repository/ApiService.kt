@@ -19,7 +19,7 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService {
     @GET("all")
-    suspend fun getAll(): CountryDto
+    suspend fun getAll(): List<CountryDto>
 }
 
 object CountryApi {
