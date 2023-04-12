@@ -8,26 +8,32 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.hanuszczak.countryinformation.databinding.FragmentMainBinding
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
+import com.hanuszczak.countryinformation.viewmodel.main.MainViewModelFactory
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by lazy {
+        val activity = requireNotNull(this.activity)
+        ViewModelProvider(
+            this,
+            MainViewModelFactory(activity.application)
+        )[MainViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        viewModel.countryDto.observe(viewLifecycleOwner) {
+        viewModel.countries.observe(viewLifecycleOwner) {
             var result = ""
-            it.currencies?.forEach { item ->
-                result = "name: ${item.value.name} symbol: ${item.value.symbol}"
+            it.forEach { item ->
+                result += "official: ${item.nameOfficial} region: ${item.region} \n"
             }
             binding.textView.text = result
         }

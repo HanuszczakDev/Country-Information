@@ -15,6 +15,6 @@ interface CountryDao{
     @Delete
     suspend fun delete(countryEntity: CountryEntity)
 
-    @Query("SELECT * FROM country ORDER BY official_name ASC")
+    @Query("SELECT * FROM country ORDER BY name_official ASC")
     fun getAll(): LiveData<List<CountryEntity>>
 }

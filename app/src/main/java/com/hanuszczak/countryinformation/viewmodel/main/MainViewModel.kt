@@ -1,29 +1,27 @@
 package com.hanuszczak.countryinformation.viewmodel.main
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.hanuszczak.countryinformation.model.dto.CountryDto
-import com.hanuszczak.countryinformation.model.repository.CountryApi
+import androidx.lifecycle.*
+import com.hanuszczak.countryinformation.model.CountryDatabase
+import com.hanuszczak.countryinformation.model.domain.Country
+import com.hanuszczak.countryinformation.model.repository.ApiRepository
 import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
-    private val _countryDto = MutableLiveData<CountryDto>()
-    val countryDto: LiveData<CountryDto>
-        get() = _countryDto
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+    private val database = CountryDatabase.getInstance(application)
+    private val repository = ApiRepository(database)
 
     init {
         Log.d("MainViewModel", "init{}")
         viewModelScope.launch {
             try {
-                val countryDtoList = CountryApi.retrofitService.getAll()
-                _countryDto.value = countryDtoList[0]
-                Log.d("MainViewModel", "response: ${countryDtoList[0]}")
+                repository.getCountriesFromApi()
             } catch (e: java.lang.Exception) {
                 Log.e("MainViewModel", "exception in init block: ${e.localizedMessage}")
             }
         }
     }
+
+    var countries: LiveData<List<Country>> = repository.countries
 }
