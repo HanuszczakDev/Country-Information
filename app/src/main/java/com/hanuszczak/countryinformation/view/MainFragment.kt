@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.hanuszczak.countryinformation.databinding.FragmentMainBinding
+import com.hanuszczak.countryinformation.viewmodel.adapter.CountryAdapter
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModelFactory
 
@@ -30,13 +31,25 @@ class MainFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        viewModel.countries.observe(viewLifecycleOwner) {
-            var result = ""
-            it.forEach { item ->
-                result += "official: ${item.nameOfficial} region: ${item.region} \n"
-            }
-            binding.textView.text = result
+        val adapter = CountryAdapter {
+            //TODO onClick
         }
+
+        binding.countryRecycler.adapter = adapter
+
+        viewModel.countries.observe(viewLifecycleOwner) {
+            it?.let {
+                adapter.submitList(it)
+            }
+        }
+
+//        viewModel.countries.observe(viewLifecycleOwner) {
+//            var result = ""
+//            it.forEach { item ->
+//                result += "official: ${item.nameOfficial} region: ${item.region} \n"
+//            }
+//            binding.textView.text = result
+//        }
 
         return binding.root
     }
