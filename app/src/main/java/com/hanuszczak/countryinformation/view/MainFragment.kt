@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.hanuszczak.countryinformation.databinding.FragmentMainBinding
 import com.hanuszczak.countryinformation.viewmodel.adapter.CountryAdapter
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
@@ -32,7 +33,7 @@ class MainFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         val adapter = CountryAdapter {
-            //TODO onClick
+            viewModel.onCountryClicked(it)
         }
 
         binding.countryRecycler.adapter = adapter
@@ -43,13 +44,13 @@ class MainFragment : Fragment() {
             }
         }
 
-//        viewModel.countries.observe(viewLifecycleOwner) {
-//            var result = ""
-//            it.forEach { item ->
-//                result += "official: ${item.nameOfficial} region: ${item.region} \n"
-//            }
-//            binding.textView.text = result
-//        }
+        viewModel.navigateToCountry.observe(viewLifecycleOwner) { country ->
+            country?.let {
+                val action = MainFragmentDirections.actionMainFragmentToDetailFragment()
+                this.findNavController().navigate(action)
+                viewModel.onCountryNavigated()
+            }
+        }
 
         return binding.root
     }

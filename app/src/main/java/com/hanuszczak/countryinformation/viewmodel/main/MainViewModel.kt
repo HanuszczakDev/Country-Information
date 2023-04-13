@@ -12,6 +12,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val database = CountryDatabase.getInstance(application)
     private val repository = ApiRepository(database)
 
+    private val _navigateToCountry= MutableLiveData<Country?>()
+    val navigateToCountry: LiveData<Country?>
+        get() = _navigateToCountry
+
     init {
         Log.d("MainViewModel", "init{}")
         viewModelScope.launch {
@@ -24,4 +28,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     var countries: LiveData<List<Country>> = repository.countries
+
+    fun onCountryClicked(country: Country) {
+        _navigateToCountry.value = country
+    }
+
+    fun onCountryNavigated() {
+        _navigateToCountry.value = null
+    }
 }
