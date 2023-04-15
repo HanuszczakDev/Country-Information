@@ -1,5 +1,9 @@
 package com.hanuszczak.countryinformation.model.domain
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Country(
     val nameOfficial: String,
     val nameCommon: String,
@@ -11,4 +15,4 @@ data class Country(
     val altitude: Double,
     val area: Double,
     val flagUrl: String
-)
+) : Parcelable
