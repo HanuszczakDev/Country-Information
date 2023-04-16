@@ -1,4 +1,4 @@
-package com.hanuszczak.countryinformation.view
+package com.hanuszczak.countryinformation.view.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.hanuszczak.countryinformation.databinding.FragmentMainBinding
+import com.hanuszczak.countryinformation.view.MainFragmentDirections
 import com.hanuszczak.countryinformation.viewmodel.adapter.CountryAdapter
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
-import com.hanuszczak.countryinformation.viewmodel.main.MainViewModelFactory
+import com.hanuszczak.countryinformation.viewmodel.factory.ViewModelFactory
 
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -20,7 +21,7 @@ class MainFragment : Fragment() {
         val activity = requireNotNull(this.activity)
         ViewModelProvider(
             this,
-            MainViewModelFactory(activity.application)
+            ViewModelFactory(activity.application)
         )[MainViewModel::class.java]
     }
 

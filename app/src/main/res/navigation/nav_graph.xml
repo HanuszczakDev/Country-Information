@@ -7,7 +7,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.hanuszczak.countryinformation.view.MainFragment"
+        android:name="com.hanuszczak.countryinformation.view.main.MainFragment"
         android:label="Country Information"
         tools:layout="@layout/fragment_main" >
         <action

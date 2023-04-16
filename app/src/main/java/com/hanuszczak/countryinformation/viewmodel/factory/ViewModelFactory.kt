@@ -1,10 +1,11 @@
-package com.hanuszczak.countryinformation.viewmodel.main
+package com.hanuszczak.countryinformation.viewmodel.factory
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
 
-class MainViewModelFactory(
+class ViewModelFactory(
     private val application: Application
 ) : ViewModelProvider.Factory {
 
