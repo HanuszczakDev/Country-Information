@@ -16,6 +16,9 @@ import com.hanuszczak.countryinformation.R
 
 class MapsFragment : Fragment() {
 
+    private val latitude = 0f
+    private val longitude = 0f
+
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.

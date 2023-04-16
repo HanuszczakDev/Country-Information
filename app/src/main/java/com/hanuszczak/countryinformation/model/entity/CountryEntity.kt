@@ -25,7 +25,7 @@ data class CountryEntity(
     @ColumnInfo(name = "latitude")
     var latitude: Double,
     @ColumnInfo(name = "altitude")
-    var altitude: Double,
+    var longitude: Double,
     @ColumnInfo(name = "area")
     var area: Double,
     @ColumnInfo(name = "flag_url")
@@ -43,7 +43,7 @@ fun List<CountryEntity>.asDomainModel(): List<Country> {
             region = it.region,
             subregion = it.subregion,
             latitude = it.latitude,
-            altitude = it.altitude,
+            longitude = it.longitude,
             area = it.area,
             flagUrl = it.flagUrl
         )

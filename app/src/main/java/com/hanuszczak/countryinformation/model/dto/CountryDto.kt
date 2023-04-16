@@ -43,7 +43,7 @@ fun countriesAsDatabaseModel(countriesDto: List<CountryDto>): Array<CountryEntit
             region = it.region,
             subregion = it.subregion ?: "",
             latitude = it.latlng.first(),
-            altitude = it.latlng.last(),
+            longitude = it.latlng.last(),
             area = it.area,
             flagUrl = it.flags.png
         )

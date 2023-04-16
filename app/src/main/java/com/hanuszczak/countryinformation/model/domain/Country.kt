@@ -13,7 +13,7 @@ data class Country(
     val region: String,
     val subregion: String,
     val latitude: Double,
-    val altitude: Double,
+    val longitude: Double,
     val area: Double,
     val flagUrl: String
 ) : Parcelable

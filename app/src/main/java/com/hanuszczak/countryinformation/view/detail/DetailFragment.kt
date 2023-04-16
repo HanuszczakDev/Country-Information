@@ -25,7 +25,10 @@ class DetailFragment : Fragment() {
         binding.country = country
 
         binding.googleMapsImg.setOnClickListener {
-            val action = DetailFragmentDirections.actionDetailFragmentToMapsFragment()
+            val action = DetailFragmentDirections.actionDetailFragmentToMapsFragment(
+                country.latitude.toFloat(),
+                country.longitude.toFloat()
+            )
             this.findNavController().navigate(action)
         }
 
