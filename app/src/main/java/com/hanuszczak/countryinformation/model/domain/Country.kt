@@ -9,6 +9,7 @@ data class Country(
     val nameCommon: String,
     val currencyName: String,
     val currencySymbol: String,
+    val capital: String,
     val region: String,
     val subregion: String,
     val latitude: Double,

@@ -39,6 +39,7 @@ fun countriesAsDatabaseModel(countriesDto: List<CountryDto>): Array<CountryEntit
             nameCommon = it.name.common,
             currencyName = it.currencies?.values?.first()?.name ?: "",
             currencySymbol = it.currencies?.values?.first()?.symbol ?: "",
+            capital = it.capital?.get(0) ?: "",
             region = it.region,
             subregion = it.subregion ?: "",
             latitude = it.latlng.first(),

@@ -16,6 +16,8 @@ data class CountryEntity(
     var currencyName: String,
     @ColumnInfo(name = "currency_symbol")
     var currencySymbol: String,
+    @ColumnInfo(name = "capital")
+    var capital: String,
     @ColumnInfo(name = "region")
     var region: String,
     @ColumnInfo(name = "subregion")
@@ -37,6 +39,7 @@ fun List<CountryEntity>.asDomainModel(): List<Country> {
             nameCommon = it.nameCommon,
             currencyName = it.currencyName,
             currencySymbol = it.currencySymbol,
+            capital = it.capital,
             region = it.region,
             subregion = it.subregion,
             latitude = it.latitude,
