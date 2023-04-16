@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.hanuszczak.countryinformation.databinding.FragmentMainBinding
-import com.hanuszczak.countryinformation.view.MainFragmentDirections
 import com.hanuszczak.countryinformation.viewmodel.adapter.CountryAdapter
 import com.hanuszczak.countryinformation.viewmodel.main.MainViewModel
 import com.hanuszczak.countryinformation.viewmodel.factory.ViewModelFactory
@@ -47,7 +46,7 @@ class MainFragment : Fragment() {
 
         viewModel.navigateToCountry.observe(viewLifecycleOwner) { country ->
             country?.let {
-                val action = MainFragmentDirections.actionMainFragmentToDetailFragment()
+                val action = MainFragmentDirections.actionMainFragmentToDetailFragment(country)
                 this.findNavController().navigate(action)
                 viewModel.onCountryNavigated()
             }
