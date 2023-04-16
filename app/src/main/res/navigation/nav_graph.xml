@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.hanuszczak.countryinformation.view.detail.DetailFragment"
-        android:label="fragment_detail"
+        android:label="Country Details"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="selectedCountry"
