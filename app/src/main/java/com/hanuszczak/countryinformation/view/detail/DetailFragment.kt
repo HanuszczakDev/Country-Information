@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.hanuszczak.countryinformation.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment() {
@@ -22,6 +23,11 @@ class DetailFragment : Fragment() {
         val country = DetailFragmentArgs.fromBundle(requireArguments()).selectedCountry
 
         binding.country = country
+
+        binding.googleMapsImg.setOnClickListener {
+            val action = DetailFragmentDirections.actionDetailFragmentToMapsFragment()
+            this.findNavController().navigate(action)
+        }
 
         return binding.root
     }

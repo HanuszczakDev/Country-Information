@@ -23,5 +23,13 @@
         <argument
             android:name="selectedCountry"
             app:argType="com.hanuszczak.countryinformation.model.domain.Country" />
+        <action
+            android:id="@+id/action_detailFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.hanuszczak.countryinformation.view.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
