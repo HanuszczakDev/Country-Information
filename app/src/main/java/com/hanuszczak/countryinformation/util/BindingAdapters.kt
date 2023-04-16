@@ -1,6 +1,7 @@
 package com.hanuszczak.countryinformation.util
 
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.facebook.shimmer.Shimmer
@@ -28,4 +29,10 @@ fun bindFlagImage(imgView: ImageView, imgUrl: String?, imgDescription: String?) 
             .error(R.drawable.ic_broken_image)
             .into(imgView)
     }
+}
+
+@BindingAdapter("areaUnit")
+fun bindAreaText(textView: TextView, number: Double) {
+    val context = textView.context
+    textView.text = String.format(context.getString(R.string.km_2_unit_format), number)
 }
