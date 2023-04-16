@@ -11,13 +11,12 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.hanuszczak.countryinformation.R
 
 class MapsFragment : Fragment() {
 
-    private val latitude = 0f
-    private val longitude = 0f
+    private var latitude = 0f
+    private var longitude = 0f
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -29,9 +28,15 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        val zoomLevel = 5f
+        val countryLatLng = LatLng(latitude.toDouble(), longitude.toDouble())
+
+//        val sydney = LatLng(latitude.toDouble(), longitude.toDouble())
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(countryLatLng, zoomLevel))
+//        googleMap.addMarker(MarkerOptions().position(countryLatLng).title("Marker in Sydney"))
+//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
     override fun onCreateView(
@@ -39,6 +44,10 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        latitude = MapsFragmentArgs.fromBundle(requireArguments()).latitude
+        longitude = MapsFragmentArgs.fromBundle(requireArguments()).longitude
+
         return inflater.inflate(R.layout.fragment_maps, container, false)
     }
 

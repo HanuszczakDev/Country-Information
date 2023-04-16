@@ -30,13 +30,13 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.hanuszczak.countryinformation.view.maps.MapsFragment"
-        android:label="fragment_maps"
+        android:label="Google Maps"
         tools:layout="@layout/fragment_maps" >
         <argument
             android:name="latitude"
             app:argType="float" />
         <argument
-            android:name="altitude"
+            android:name="longitude"
             app:argType="float" />
     </fragment>
 </navigation>
