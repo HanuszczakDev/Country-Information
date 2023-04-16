@@ -69,7 +69,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Common Name:"
+                        android:text="@string/common_name"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -83,7 +83,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Official Name:"
+                        android:text="@string/official_name"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -97,7 +97,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Capital:"
+                        android:text="@string/capital"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -111,7 +111,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Region:"
+                        android:text="@string/region"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -125,7 +125,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Subregion:"
+                        android:text="@string/subregion"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -139,7 +139,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Area:"
+                        android:text="@string/area"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -153,7 +153,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Currency:"
+                        android:text="@string/currency"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -167,7 +167,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Currency symbol:"
+                        android:text="@string/currency_symbol"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <TextView
@@ -181,7 +181,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Google Maps:"
+                        android:text="@string/google_maps"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <ImageView
@@ -189,7 +189,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="start"
-                        android:contentDescription="Go to Google maps"
+                        android:contentDescription="@string/go_to_google_maps"
                         android:scaleType="centerCrop"
                         android:src="@drawable/google_maps" />
 
