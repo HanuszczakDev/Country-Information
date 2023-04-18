@@ -6,7 +6,7 @@
     <string name="satellite_map">Satellite Map</string>
     <string name="terrain_map">Terrain Map</string>
 
-    <string name="km_2_unit_format">%.2f k㎡</string>
+    <string name="km_2_unit_format">%.0f k㎡</string>
 
     <string name="common_name">Common Name:</string>
     <string name="official_name">Official Name:</string>
