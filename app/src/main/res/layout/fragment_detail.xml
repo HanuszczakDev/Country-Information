@@ -24,7 +24,7 @@
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="@dimen/collapsing_toolbar_height_300dp"
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="@{country.nameCommon}">
@@ -64,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="@dimen/padding_large_16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -75,10 +75,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.nameCommon}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -89,10 +89,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.nameOfficial}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -103,10 +103,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.capital}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -117,10 +117,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.region}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -131,10 +131,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.subregion}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -145,10 +145,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         app:areaUnit="@{country.area}"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -159,10 +159,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.currencyName}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -173,10 +173,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginBottom="@dimen/margin_large_16dp"
                         android:text="@{country.currencySymbol}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        tools:text="Cuntry information" />
+                        tools:text="Country information" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -186,8 +186,8 @@
 
                     <ImageView
                         android:id="@+id/google_maps_img"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="@dimen/image_maps_icon_width_50dp"
+                        android:layout_height="@dimen/image_maps_icon_height_50dp"
                         android:layout_gravity="start"
                         android:contentDescription="@string/go_to_google_maps"
                         android:scaleType="centerCrop"

@@ -13,9 +13,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp">
+        android:layout_margin="@dimen/margin_medium_8dp"
+        app:cardCornerRadius="@dimen/margin_small_4dp"
+        app:cardElevation="@dimen/margin_small_4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="@dimen/image_height_in_card_200dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 app:imgDescription="@{country.nameOfficial}"
@@ -36,16 +36,19 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{country.nameOfficial}"
-                android:textSize="18sp"
-                tools:text="Official name" />
+                android:text="@{country.nameCommon}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_margin="@dimen/margin_small_4dp"
+                android:textStyle="bold"
+                tools:text="Common name" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{country.nameCommon}"
-                android:textSize="12sp"
-                tools:text="Common name" />
+                android:text="@{country.nameOfficial}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_margin="@dimen/margin_small_4dp"
+                tools:text="Official name" />
 
         </LinearLayout>
 

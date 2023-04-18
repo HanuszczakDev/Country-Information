@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_large_16dp">16dp</dimen>
+    <dimen name="margin_medium_8dp">8dp</dimen>
+    <dimen name="margin_small_4dp">4dp</dimen>
+
+    <dimen name="padding_large_16dp">16dp</dimen>
+
+    <dimen name="image_height_in_card_200dp">200dp</dimen>
+    <dimen name="image_maps_icon_width_50dp">50dp</dimen>
+    <dimen name="image_maps_icon_height_50dp">50dp</dimen>
+
+    <dimen name="collapsing_toolbar_height_300dp">300dp</dimen>
+
+    <dimen name="width_0dp">0dp</dimen>
+    <dimen name="height_0dp">0dp</dimen>
+</resources>
