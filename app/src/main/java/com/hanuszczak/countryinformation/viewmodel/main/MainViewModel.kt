@@ -8,13 +8,21 @@ import com.hanuszczak.countryinformation.model.domain.Country
 import com.hanuszczak.countryinformation.model.repository.ApiRepository
 import kotlinx.coroutines.launch
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+const val SCROLL_POSITION_KEY = "rv.scroll_position"
+
+class MainViewModel(application: Application, private val savedStateHandle: SavedStateHandle) : AndroidViewModel(application) {
     private val database = CountryDatabase.getInstance(application)
     private val repository = ApiRepository(database)
 
-    private val _navigateToCountry= MutableLiveData<Country?>()
+    private val _navigateToCountry = MutableLiveData<Country?>()
     val navigateToCountry: LiveData<Country?>
         get() = _navigateToCountry
+
+    var scrollPosition: Int = savedStateHandle[SCROLL_POSITION_KEY] ?: 0
+        private set
+
+    // Variable for detecting orientation change
+    var didOrientationChange = false
 
     init {
         Log.d("MainViewModel", "init{}")
@@ -35,5 +43,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onCountryNavigated() {
         _navigateToCountry.value = null
+    }
+
+    fun setScrollPosition(newPosition: Int) {
+        if (!didOrientationChange) {
+            scrollPosition = newPosition
+            savedStateHandle[SCROLL_POSITION_KEY] = newPosition
+        }
     }
 }
