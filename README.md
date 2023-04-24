@@ -1,5 +1,7 @@
 # Country Information
 
+[![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=24)
+
 Application designed for Udacity nanodegree program - Kotlin Developer.
 
 ## External API
@@ -10,6 +12,8 @@ Get information about countries via a RESTful API
 
 check out their Gitlab repo:
 https://gitlab.com/restcountries/restcountries
+
+![Detail Screen](images/AppFlow.gif)
 
 ## Features ✨
 
@@ -51,10 +55,9 @@ MAPS_API_KEY=<YOUR_API_KEY>
 
 ## Overview
 
-![Main Screen](images/MainScreen.png)
+![Google Maps Screen](images/AppFlow2.gif)
 
-![Detail Screen](images/DetailScreen.png)
-
-![Detail Screen](images/DetailScreen2.png)
-
-![Google Maps Screen](images/MapsScreen.png)
+| ![Main Screen](images/MainScreen.png)  | ![Detail Screen](images/DetailScreen.png) |
+|----------------------------------------| ------ |
+| ![Detail Screen](images/DetailScreen2.png)  | ![Google Maps Screen](images/MapsScreen.png) |
+|----------------------------------------| ------ |
